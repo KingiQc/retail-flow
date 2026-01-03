@@ -2,95 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Background & Surfaces */
+    --background: 50 20% 98%; /* #fbfbf9 */
+    --foreground: 220 20% 15%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 220 20% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 220 20% 15%;
+    
+    /* Primary - Deep Teal */
+    --primary: 174 62% 32%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Light gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 25%;
+    
+    /* Muted */
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Accent - Warm Amber */
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Success - Green */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 174 62% 32%;
+    
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 220 20% 12%;
+    --sidebar-foreground: 220 14% 90%;
+    --sidebar-primary: 174 62% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 220 14% 90%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 174 62% 45%;
+    
+    /* Custom POS tokens */
+    --pos-cart-bg: 0 0% 100%;
+    --pos-product-bg: 0 0% 100%;
+    --pos-button-lg: 174 62% 32%;
+    --pos-badge: 220 14% 96%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 220 20% 10%;
+    --foreground: 220 14% 95%;
+    --card: 220 20% 13%;
+    --card-foreground: 220 14% 95%;
+    --popover: 220 20% 13%;
+    --popover-foreground: 220 14% 95%;
+    --primary: 174 62% 50%;
+    --primary-foreground: 220 20% 10%;
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 220 14% 90%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 38 92% 55%;
+    --accent-foreground: 220 20% 10%;
+    --success: 142 71% 50%;
+    --success-foreground: 220 20% 10%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 174 62% 50%;
   }
 }
 
@@ -98,8 +93,116 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Custom scrollbar for POS */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Large touch-friendly buttons for POS */
+  .pos-btn {
+    @apply h-14 px-6 text-lg font-semibold rounded-xl transition-all duration-150 active:scale-[0.98];
+  }
+  
+  .pos-btn-primary {
+    @apply pos-btn bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20;
+  }
+  
+  .pos-btn-accent {
+    @apply pos-btn bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20;
+  }
+  
+  .pos-btn-success {
+    @apply pos-btn bg-success text-success-foreground hover:bg-success/90 shadow-lg shadow-success/20;
+  }
+  
+  .pos-btn-secondary {
+    @apply pos-btn bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+  
+  /* Product cards */
+  .pos-product-card {
+    @apply bg-card rounded-xl p-4 border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-[0.98];
+  }
+  
+  /* Cart styling */
+  .pos-cart {
+    @apply bg-card rounded-2xl shadow-xl border border-border/50;
+  }
+  
+  /* Numeric keypad buttons */
+  .pos-numpad-btn {
+    @apply h-16 w-16 text-2xl font-semibold rounded-xl bg-secondary text-secondary-foreground hover:bg-secondary/80 active:scale-95 transition-all;
+  }
+  
+  /* Size/Color badges */
+  .pos-variant-badge {
+    @apply px-4 py-2 rounded-lg text-sm font-medium border-2 cursor-pointer transition-all;
+  }
+  
+  .pos-variant-badge-active {
+    @apply border-primary bg-primary/10 text-primary;
+  }
+  
+  .pos-variant-badge-inactive {
+    @apply border-border bg-background text-muted-foreground hover:border-primary/50;
+  }
+  
+  /* Sidebar nav items */
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-foreground transition-colors;
+  }
+  
+  .sidebar-nav-item-active {
+    @apply bg-sidebar-primary text-sidebar-primary-foreground;
+  }
+  
+  /* Stats cards */
+  .stats-card {
+    @apply bg-card rounded-xl p-6 border border-border/50 shadow-sm;
+  }
+  
+  /* Table styling */
+  .pos-table {
+    @apply w-full text-sm;
+  }
+  
+  .pos-table th {
+    @apply text-left font-semibold text-muted-foreground px-4 py-3 border-b border-border;
+  }
+  
+  .pos-table td {
+    @apply px-4 py-3 border-b border-border/50;
+  }
+  
+  .pos-table tr:hover td {
+    @apply bg-muted/30;
+  }
+  
+  /* Monospace for prices/numbers */
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
